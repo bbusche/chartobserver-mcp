@@ -45,9 +45,7 @@ Restart Claude Desktop. The tools become available in any conversation.
 
 ### Where to find your credentials
 
-Sign in at https://chart.observer and open **Settings → API & Integrations**. The page shows your webhook ID, UID, and username with copy buttons and a pre-filled config snippet.
-
-(Until that settings page ships, ask Brian for your three values.)
+Sign in at https://chart.observer and open **Integrations → AI Agent (MCP)** — or go directly to https://chart.observer/integrations/mcp. The page shows your webhook ID, UID, and username with copy buttons and a pre-filled config snippet you can paste straight into your MCP client.
 
 ## Environment variables
 
@@ -97,7 +95,7 @@ Sign in at https://chart.observer and open **Settings → API & Integrations**. 
 - **`place_trade` defaults to dry-run.** The AI agent must explicitly pass `dry_run: false` to execute. You should be asked for confirmation before that happens.
 - **Live trades are validated.** Execution runs the same checks as the dry run (sufficient funds, position size, well-formed quantities) and refuses trades that would fail, without calling the API.
 - **Secret redaction.** Error text returned to the agent is sanitized; the webhook credential is redacted as defense-in-depth so it cannot leak into transcripts.
-- **Bearer-secret auth.** The webhook ID acts as a bearer token. If it leaks, anyone can act on your account. Don't paste it into screenshots, logs, or chat messages. If you suspect compromise, regenerate it from Settings → API & Integrations.
+- **Bearer-secret auth.** The webhook ID acts as a bearer token. If it leaks, anyone can act on your account. Don't paste it into screenshots, logs, or chat messages. If you suspect compromise, regenerate it from https://chart.observer/integrations/mcp.
 - **No account creation.** Sign up at https://chart.observer in a browser. Web signup requires a CAPTCHA, which a headless MCP server can't solve.
 
 ## What's not in v1

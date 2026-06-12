@@ -37,7 +37,7 @@ standing and visible portfolio, not real funds). Treat it like a password:
 - This server sanitizes its error output and redacts the credential from any
   text returned to the AI agent, as defense-in-depth.
 - If you suspect it leaked, regenerate it from your ChartObserver account
-  settings (Settings → API & Integrations) — the old value stops working
+  settings (https://chart.observer/integrations/mcp) — the old value stops working
   immediately.
 
 ## Reporting a vulnerability

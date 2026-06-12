@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.2.2 — 2026-06-12
+
+The self-serve credentials page is now live in production.
+
+- README, SECURITY.md, server instructions, and config error hints now point
+  to the real credentials page: https://chart.observer/integrations/mcp
+  (Integrations → AI Agent (MCP)) — masked webhook ID with reveal, copy
+  buttons, and a pre-filled MCP config snippet.
+- Removed the interim "ask Brian" fallback; the package is now fully
+  self-serve: sign up at https://chart.observer, copy credentials, connect.
+
 ## 0.2.1 — 2026-06-12
 
 Agent-facing signup guidance. No behavior changes to tools or transport.
