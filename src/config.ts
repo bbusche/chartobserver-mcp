@@ -14,7 +14,13 @@ export const DEFAULT_API_BASE =
 
 export const DEFAULT_TIMEOUT_MS = 15_000;
 
-export const PACKAGE_VERSION = "0.2.0";
+export const PACKAGE_VERSION = "0.2.1";
+
+export const CREDENTIALS_HINT =
+  "These values come from your chart.observer account: create one in a " +
+  "browser at https://chart.observer (accounts cannot be created via this " +
+  "server), then copy your webhook ID, UID, and username from Settings → " +
+  "API & Integrations.";
 
 // Validation messages must never echo the webhook value — they can end up in
 // MCP client logs.
@@ -54,7 +60,7 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): Config {
     throw new Error(
       `Missing required environment variable(s): ${missing.join(
         ", ",
-      )}. Configure them in your MCP client's mcpServers entry. See README.`,
+      )}. Configure them in your MCP client's mcpServers entry. ${CREDENTIALS_HINT}`,
     );
   }
 
@@ -84,7 +90,7 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): Config {
           : i.message,
       )
       .join(" ");
-    throw new Error(`Invalid configuration: ${reasons}`);
+    throw new Error(`Invalid configuration: ${reasons} ${CREDENTIALS_HINT}`);
   }
 
   return {

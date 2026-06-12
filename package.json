@@ -1,6 +1,6 @@
 {
   "name": "@chartobserver/mcp-server",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "MCP server for the ChartObserver paper-trading platform. Lets an AI agent (Claude Desktop, etc.) read portfolio state, place trades, and check the leaderboard on behalf of the configured user.",
   "license": "MIT",
   "author": "ChartObserver Corp",

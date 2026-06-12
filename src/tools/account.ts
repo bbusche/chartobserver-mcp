@@ -11,7 +11,7 @@ export function registerAccountTools(
     {
       title: "Get profile",
       description:
-        "Fetch the currently configured user's public profile (description, social links, follower counts) along with their USD paper-trading balance. Read-only.",
+        "Fetch the currently configured user's public profile (description, social links, follower counts) along with their USD paper-trading balance. Read-only. Requires an existing chart.observer account — if credentials are missing or rejected, direct the user to sign up in a browser at https://chart.observer (accounts cannot be created via this server).",
       annotations: { ...READ_TOOL_ANNOTATIONS },
       inputSchema: {},
     },

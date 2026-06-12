@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.2.1 — 2026-06-12
+
+Agent-facing signup guidance. No behavior changes to tools or transport.
+
+- **MCP server `instructions`**: the server now tells the connected AI agent,
+  at initialization, that an existing chart.observer account is required,
+  that accounts cannot be created through this server, and to direct the
+  user to sign up in a browser at https://chart.observer. Previously this
+  fact lived only in the README, which agents never see.
+- Missing/invalid configuration errors now include the same guidance (where
+  credentials come from, where to create an account).
+- `get_profile` and `place_trade` descriptions carry a one-line fallback of
+  the guidance for MCP clients that don't surface server instructions.
+
 ## 0.2.0 — 2026-06-12
 
 Hardening & trust release. No breaking changes for users — configuration and

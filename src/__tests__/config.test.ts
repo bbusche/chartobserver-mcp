@@ -100,4 +100,25 @@ describe("loadConfig", () => {
       loadConfig({ ...validEnv, CHARTOBSERVER_TIMEOUT_MS: "999999999" }),
     ).toThrow(/CHARTOBSERVER_TIMEOUT_MS/);
   });
+
+  it("missing-credentials error directs the user to chart.observer signup", () => {
+    let msg = "";
+    try {
+      loadConfig({});
+    } catch (e) {
+      msg = (e as Error).message;
+    }
+    expect(msg).toContain("https://chart.observer");
+    expect(msg).toMatch(/create one in a browser/);
+  });
+
+  it("invalid-credentials error directs the user to chart.observer signup", () => {
+    let msg = "";
+    try {
+      loadConfig({ ...validEnv, CHARTOBSERVER_UID: "alice" });
+    } catch (e) {
+      msg = (e as Error).message;
+    }
+    expect(msg).toContain("https://chart.observer");
+  });
 });

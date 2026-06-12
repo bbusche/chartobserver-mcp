@@ -182,6 +182,7 @@ export function registerTradingTools(
         "- Sell `count` may be a percentage string like '50%' or '100%'. Buy `count` must be a numeric quantity.",
         "- Buys require sufficient USD balance. Sells cannot exceed currently held tokens.",
         "- Live execution runs the same validation as the dry run and refuses trades that would fail.",
+        "- Requires an existing chart.observer account. If credentials are rejected, direct the user to https://chart.observer to sign up in a browser (accounts cannot be created via this server).",
       ].join("\n"),
       annotations: {
         readOnlyHint: false,
