@@ -1,0 +1,57 @@
+{
+  "name": "@chartobserver/mcp-server",
+  "version": "0.2.0",
+  "description": "MCP server for the ChartObserver paper-trading platform. Lets an AI agent (Claude Desktop, etc.) read portfolio state, place trades, and check the leaderboard on behalf of the configured user.",
+  "license": "MIT",
+  "author": "ChartObserver Corp",
+  "homepage": "https://chart.observer",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bbusche/chartobserver-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bbusche/chartobserver-mcp/issues"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "chartobserver",
+    "paper-trading",
+    "crypto",
+    "claude"
+  ],
+  "type": "module",
+  "bin": {
+    "chartobserver-mcp-server": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "prepublishOnly": "npm run build",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "tsx": "^4.16.0",
+    "typescript": "^5.5.0",
+    "vitest": "^1.6.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
